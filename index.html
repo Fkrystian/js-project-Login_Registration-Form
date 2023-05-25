@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login / Registration Form</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+  <link rel="stylesheet" href="styles.css">
+  <script async defer src="app.js"></script>
+</head>
+<body>
+  <main>
+    <div class="form__container">
+      <div class="form__container-labels">
+        <ul class="form__labels-list">
+          <li class="form__labels-list-item active">
+            <span class="material-symbols-outlined container__label-icons">person</span> Sign In</li>
+          <li class="form__labels-list-item">
+            <span class="material-symbols-outlined container__label-icons">person_add</span> Sign Up</li>
+        </ul>
+      </div>
+      <div class="form__container-content">
+        <form action="" method="post" class="form__login">
+          <div class="form__login-inputs-box">
+            <input type="text" name="login" id="login" class="form__login-input" required aria-required="true">
+            <input type="password" name="password" id="password" class="form__login-input" required aria-required="true">            
+          </div>
+          <a href="#" class="form__login-forgot">Forgot Password?</a>
+          <div class="form__login-checkbox-box">
+            <input type="checkbox" name="remember" id="remember" class="form__login-checkbox-input">
+            <label for="remember">Remember Me</label>            
+          </div>
+          <button class="form__login-btn">
+            <span class="material-symbols-outlined form__login-btn-ico">login</span>
+            Sign In
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

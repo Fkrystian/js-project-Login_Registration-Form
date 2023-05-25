@@ -1,0 +1,149 @@
+html{
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after{
+  box-sizing: border-box;
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 auto;
+  background-color: hsl(210, 50%, 90%);
+}
+
+main{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form__container{
+  width: 100%;
+  max-width: 50rem;
+  padding: 4rem 1rem;
+  display: flex;
+  gap: 3rem;
+  flex-direction: column;
+  border-radius: 1rem;
+  background-color: hsla(210, 50%, 100%, .4);
+  font-size: 1.3rem;
+}
+
+.form__container-labels{
+  width: 100%;
+}
+
+/* Labels */
+.form__labels-list{
+  width: 100%;
+  height: 8rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+}
+
+.form__labels-list-item{
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+  color: hsl(240, 50%, 50%);
+  font-size: 1.4rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.form__labels-list-item.active{
+  padding: 2rem 3rem;
+  background-color: hsl(240, 50%, 50%);
+  border-radius: 1rem;
+  color:hsl(0, 50%, 100%);
+  font-size: 1.4rem;
+}
+
+.container__label-icons{
+  font-size: 1.8rem;
+}
+
+
+.form__container-content{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Login Form */
+
+.form__login{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.form__login-inputs-box{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form__login-input{
+  height: 4rem;
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 0 5px hsla(240, 50%, 0%, .2);
+}
+
+.form__login-forgot{
+  text-decoration: none;
+  color: hsl(240, 50%, 50%);
+}
+
+.form__login-checkbox-box{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.form__login-checkbox-box > label{
+  font-size: 1.4rem;
+  color:hsla(0, 50%, 0%, .9)
+}
+
+input.form__login-checkbox-input{
+  height: 2rem;
+  width: 2rem;
+  box-shadow: 0 0 4px hsla(240, 50%, 0%, .2);
+}
+
+
+.form__login-btn{
+  width: 100%;
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(240, 50%, 50%);
+  border: none;
+  font-size: 1.4rem;
+  color:hsl(0, 50%, 100%);
+}

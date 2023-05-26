@@ -23,8 +23,16 @@
       <div class="form__container-content">
         <form action="" method="post" class="form__login">
           <div class="form__login-inputs-box">
-            <input type="text" name="login" id="login" class="form__login-input" required aria-required="true">
-            <input type="password" name="password" id="password" class="form__login-input" required aria-required="true">            
+            <div class="form__input-box">
+              <input type="text" name="login" id="login" class="form__login-input" placeholder="Your Login" required aria-required="true">
+              <span class="material-symbols-outlined form__input-box-ico">person</span>              
+            </div>
+          <div class="form__input-box">
+            <input type="password" name="password" id="password" class="form__login-input form__login-input-password" placeholder="Password" required aria-required="true">    
+            <span class="material-symbols-outlined form__input-box-ico form__input-box-ico-lock">lock</span>   
+            <span class="material-symbols-outlined form__input-box-ico-visibility">visibility</span>             
+          </div>
+        
           </div>
           <a href="#" class="form__login-forgot">Forgot Password?</a>
           <div class="form__login-checkbox-box">

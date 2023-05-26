@@ -100,11 +100,45 @@ main{
   gap: 2rem;
 }
 
+.form__input-box{
+  width: 100%;
+  position: relative;
+}
+
 .form__login-input{
+  width: 100%;
   height: 4rem;
   border-radius: 1rem;
   border: none;
   box-shadow: 0 0 5px hsla(240, 50%, 0%, .2);
+  padding-left: 4rem;
+}
+
+.form__login-input::placeholder{
+  opacity: .6;
+}
+
+.form__input-box-ico{
+  font-size: 2rem;
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  transform: translateY(50%);
+  opacity: .6;
+}
+
+.form__input-box-ico-visibility{
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  top: 0;
+  transform: translateY(50%);
+  opacity: .6;
+}
+
+.form__input-box-ico-visibility:hover{
+  cursor: pointer;
+  font-weight: 600;
 }
 
 .form__login-forgot{

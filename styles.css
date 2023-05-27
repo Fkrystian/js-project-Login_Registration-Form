@@ -86,14 +86,14 @@ main{
 
 /* Login Form */
 
-.form__login{
+.form__body{
   width: 90%;
   display: flex;
   flex-direction: column;
   gap: 3rem;
 }
 
-.form__login-inputs-box{
+.form__body-inputs-boxes{
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -180,4 +180,36 @@ input.form__login-checkbox-input{
   border: none;
   font-size: 1.4rem;
   color:hsl(0, 50%, 100%);
+}
+
+/* Sign up */
+
+/* Password */
+.form__input-box{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.password__strength-container{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.password__strength-bar{
+  height: 1rem;
+  width: 25%;
+  border-radius: .5rem;
+  background-color: hsl(0, 50%, 40%);
+}
+
+.password__errors-message{
+  font-size: 1.4rem;
+  color: hsl(0, 50%, 40%);
+}
+
+.password__check-errors-message{
+  font-size: 1.4rem;
+  color: hsl(0, 50%, 40%);
 }

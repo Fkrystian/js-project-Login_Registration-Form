@@ -6,7 +6,6 @@ const passwordMessagesContainer = document.querySelector('#password__errors-mess
 //Function 
 const checkPasswordStrength = function checkPasswordStrength(input){
   const password = input.value;
-  
   // Tests
   const lengthCheck = password.length >= 5 && password.length <=20;
   const upperCaseCheck = /[A-Z]/.test(password);
@@ -31,6 +30,67 @@ const checkPasswordStrength = function checkPasswordStrength(input){
   !numberCheck ? passwordMessagesContainer.insertAdjacentHTML('afterbegin', numberMessage) : passwordMessagesContainer.insertAdjacentHTML('afterbegin', emptyMessage); 
 
   // Password strength display
+  const testsData = [lengthCheck, upperCaseCheck, lowerCaseCheck, symbolCheck, numberCheck];
+  return testsData;
+}
+
+const passwordBarsDisplay = function displayPasswordStrengthBars(data){
+  const count = data.reduce((acc, value) => value === true ? acc + 1 : acc, 0);
+  paswordStrengthContainer.innerHTML = '';
+  console.log(count);
+  if(count === 1) {
+    generatePasswordBars(1);
+  }
+
+  if(count === 2) {
+    generatePasswordBars(2);
+  }
+
+  if(count === 3) {
+    generatePasswordBars(3);
+  }
+
+  if(count === 4) {
+    generatePasswordBars(4);
+  }
+
+  if(count === 5) {
+    generatePasswordBars(5);
+  }
+
+  if(count === 0) {
+    return
+  }
+}
+
+const generatePasswordBars = function generatePasswordBars(barsNumber){
+  for(let i = 0; i < barsNumber; i++){
+    const bar = document.createElement('div');
+    bar.classList.add('password__strength-bar');
+    bar.innerHTML = `<div"></div>`;
+    bar.style.backgroundColor = 'hsl(0, 50%, 40%)';
+    paswordStrengthContainer.insertAdjacentElement('afterbegin', bar); 
+    
+    if(barsNumber === 1){
+      bar.style.backgroundColor = 'hsl(0, 50%, 40%)';
+    }
+
+    if(barsNumber === 2){
+      bar.style.backgroundColor = 'hsl(30, 50%, 40%)';
+    }
+
+    if(barsNumber === 3){
+      bar.style.backgroundColor = 'hsl(60, 50%, 40%)';
+    }
+
+    if(barsNumber === 4){
+      bar.style.backgroundColor = 'hsl(90, 50%, 40%)';
+    }
+
+    if(barsNumber === 5){
+      bar.style.backgroundColor = 'hsl(120, 50%, 40%)';
+    }
+  }
 }
 
 // Calls
@@ -42,4 +102,5 @@ loginPasswordIcon.addEventListener('click', function() {
 
 signUpPasswordInput.addEventListener('input', function(){
   checkPasswordStrength(signUpPasswordInput);
+  passwordBarsDisplay(checkPasswordStrength(signUpPasswordInput));
 })

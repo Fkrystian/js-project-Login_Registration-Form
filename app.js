@@ -3,6 +3,14 @@ const loginPasswordIcon = document.querySelector('.form__input-box-ico-visibilit
 const signUpPasswordInput = document.querySelector('#sign-up-password');
 const paswordStrengthContainer = document.querySelector('#password__strength-container');
 const passwordMessagesContainer = document.querySelector('#password__errors-messages');
+const passwordConfirmInput = document.querySelector('#signUp-password-confirm');
+const passwordCheckMsgContainer = document.querySelector('#password__check-errors');
+const btnSignUp = document.querySelector('.btn__sign-up');
+const btnSignIn = document.querySelector('.btn__sign-in');
+const formContainer = document.querySelectorAll('.form__container-content');
+const formContainerSignIn = document.querySelector('.form__container-sign-in');
+const formContainerSignUp = document.querySelector('.form__container-sign-up');
+
 //Function 
 const checkPasswordStrength = function checkPasswordStrength(input){
   const password = input.value;
@@ -29,7 +37,6 @@ const checkPasswordStrength = function checkPasswordStrength(input){
   !symbolCheck ? passwordMessagesContainer.insertAdjacentHTML('afterbegin', symbolMessage) : passwordMessagesContainer.insertAdjacentHTML('afterbegin', emptyMessage); 
   !numberCheck ? passwordMessagesContainer.insertAdjacentHTML('afterbegin', numberMessage) : passwordMessagesContainer.insertAdjacentHTML('afterbegin', emptyMessage); 
 
-  // Password strength display
   const testsData = [lengthCheck, upperCaseCheck, lowerCaseCheck, symbolCheck, numberCheck];
   return testsData;
 }
@@ -37,7 +44,7 @@ const checkPasswordStrength = function checkPasswordStrength(input){
 const passwordBarsDisplay = function displayPasswordStrengthBars(data){
   const count = data.reduce((acc, value) => value === true ? acc + 1 : acc, 0);
   paswordStrengthContainer.innerHTML = '';
-  console.log(count);
+
   if(count === 1) {
     generatePasswordBars(1);
   }
@@ -93,6 +100,21 @@ const generatePasswordBars = function generatePasswordBars(barsNumber){
   }
 }
 
+const confirmPasswordCheck = function confirmIfPasswordsTheSame(confirmInputData, signUpValue){
+  let confirmInput = confirmInputData.value;
+  passwordCheckMsgContainer.innerHTML = '';
+
+  if(confirmInput === signUpValue) {
+    passwordCheckMsgContainer.innerHTML = '';
+  } else {
+    let errorMsg = document.createElement('div');
+    errorMsg.classList.add('password__check-errors-message');
+    errorMsg.innerText = `Passwords are not the same`;
+
+    passwordCheckMsgContainer.insertAdjacentElement('afterbegin', errorMsg);
+  }
+}
+
 // Calls
 loginPasswordIcon.addEventListener('click', function() {
   const type = loginPasswordInput.getAttribute("type") === "password" ? "text" : "password";
@@ -104,3 +126,23 @@ signUpPasswordInput.addEventListener('input', function(){
   checkPasswordStrength(signUpPasswordInput);
   passwordBarsDisplay(checkPasswordStrength(signUpPasswordInput));
 })
+
+passwordConfirmInput.addEventListener('input', function() {
+  let signUpValue =  signUpPasswordInput.value;
+  confirmPasswordCheck(passwordConfirmInput, signUpValue);
+})
+
+btnSignIn.addEventListener('click', function() {
+  btnSignIn.classList.add('active');
+  btnSignUp.classList.remove('active');
+  formContainerSignIn.classList.remove('inactive');
+  formContainerSignUp.classList.add('inactive');
+})
+
+btnSignUp.addEventListener('click', function() {
+  btnSignUp.classList.add('active');
+  btnSignIn.classList.remove('active');
+  formContainerSignIn.classList.add('inactive');
+  formContainerSignUp.classList.remove('inactive');
+})
+

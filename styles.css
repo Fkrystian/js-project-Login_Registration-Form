@@ -64,6 +64,11 @@ main{
   gap: 1rem;
 }
 
+.form__labels-list-item:hover{
+  cursor: pointer;
+}
+
+
 .form__labels-list-item.active{
   padding: 2rem 3rem;
   background-color: hsl(240, 50%, 50%);
@@ -212,4 +217,14 @@ input.form__login-checkbox-input{
 .password__check-errors-message{
   font-size: 1.4rem;
   color: hsl(0, 50%, 40%);
+}
+
+/* Form containers */
+.form__container-sign-in.inactive{
+  display: none;
+}
+
+
+.form__container-sign-up.inactive{
+  display: none;
 }

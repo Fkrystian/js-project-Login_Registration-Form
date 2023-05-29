@@ -14,14 +14,14 @@
     <div class="form__container">
       <div class="form__container-labels">
         <ul class="form__labels-list">
-          <li class="form__labels-list-item active">
+          <li class="form__labels-list-item btn__sign-in active" type="button">
             <span class="material-symbols-outlined container__label-icons">person</span> Sign In</li>
-          <li class="form__labels-list-item">
+          <li class="form__labels-list-item btn__sign-up" type="button">
             <span class="material-symbols-outlined container__label-icons">person_add</span> Sign Up</li>
         </ul>
       </div>
 <!-- Sign In -->
-      <div class="form__container-content">
+      <div class="form__container-content form__container-sign-in">
         <form action="" method="post" class="form__body">
           <div class="form__body-inputs-boxes">
             <div class="form__input-box">
@@ -48,7 +48,7 @@
         </form>
       </div>
 <!-- Sign Up -->
-      <div class="form__container-content">
+      <div class="form__container-content form__container-sign-up inactive">
         <form action="" method="post" class="form__body"> 
           <div class="form__body-inputs-boxes">
             <!-- Email -->
@@ -73,7 +73,7 @@
               </span>   
               <div id="password__strength-container" class="password__strength-container">
                 <!-- <div class="password__strength-bar"></div> -->
-                
+
               </div>
               <div id="password__errors-messages"  class="password__errors-messages">
                 <!-- <p class="password__errors-message">Password too short</p> -->
@@ -86,7 +86,7 @@
                 check_box
                 </span>
                 <div id="password__check-errors"  class="password__check-errors">
-                  <p class="password__check-errors-message">Passwords are not the same</p>
+                  <!-- <p class="password__check-errors-message">Passwords are not the same</p> -->
                 </div>
             </div>
           </div>
